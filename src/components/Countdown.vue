@@ -1,8 +1,11 @@
 <template>
   <div>
     <input type='text' v-model='seconds'>
-    <b-progress :value="progress" :max="max" show-progress animated></b-progress>
+    <b-progress height='300px' :value="progress" :max="max" show-progress animated></b-progress>
+
     <button v-on:click='start()'>start</button>
+    <h2 v-show='running'><b-badge>Running...</b-badge></h2>
+    <h2>{{(this.progress/1000).toFixed(1)}}</h2>
   </div>
 </template>
 
@@ -31,6 +34,7 @@ export default {
       this.progress = now - this.startTime
       if (this.progress >= this.max) {
         this.running = false
+        this.progress = this.max
         return
       }
       setTimeout(this.updateProgress, 100)
