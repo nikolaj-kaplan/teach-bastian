@@ -1,8 +1,9 @@
 <template>
   <div>
+    <!-- hvor mange sekunder skal vi tælle til? -->
     <input type='text' v-model='seconds'>
     <b-progress :value="progress" :max="max" show-progress animated></b-progress>
-    <button v-on:click='start()'>start</button>
+    Vi skal have en knap til at starte
   </div>
 </template>
 
