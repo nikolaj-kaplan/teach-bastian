@@ -1,18 +1,20 @@
 <template>
   <div>
     <!-- hvor mange sekunder skal vi tælle til? -->
-    <input type='text' v-model='seconds'>
+    Hvor mange sekunder? <input style='font-size:30px; width: 50px;' type='text' v-model='seconds'>
     <b-progress :value="progress" :max="max" show-progress animated></b-progress>
-    Vi skal have en knap til at starte
+    Vi skal have en knap til at starte<br>
+    Og vise progress som tal også?
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'countdown',
   data () {
     return {
-      progress: 0,
+      progress: 10,
       max: 100,
       seconds: 0,
       startTime: undefined,
@@ -35,4 +37,5 @@ export default {
     }
   }
 }
+/* eslint-enable */
 </script>
