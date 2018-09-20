@@ -11,3 +11,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+*.cache
+c#/.vs/*
+c#/Opgaver01/obj/*

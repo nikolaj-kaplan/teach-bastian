@@ -10,11 +10,12 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'countdown',
   data () {
     return {
-      progress: 50,
+      progress: 10,
       max: 100,
       seconds: 0,
       startTime: undefined,
@@ -23,10 +24,7 @@ export default {
   },
   methods: {
     start () {
-      this.running = true
       this.startTime = new Date().getTime()
-      this.max = 1000 * this.seconds
-      this.progress = 0
       this.updateProgress()
     },
     updateProgress () {
@@ -37,8 +35,10 @@ export default {
         this.progress = this.max
         return
       }
+      // her genstarter vi ved at sætte et timeout, der kalder samme funktion igen om 100 ms
       setTimeout(this.updateProgress, 100)
     }
   }
 }
+/* eslint-enable */
 </script>
